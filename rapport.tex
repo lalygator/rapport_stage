@@ -1,0 +1,56 @@
+%\documentclass{report}
+\documentclass{article}
+
+\input{base/packages.tex}
+\input{base/style.tex}
+\date{}
+
+\title{\vspace{10em}\textbf{Recherche de masque de transmission adapté à l'observation d'exoplanète à faible séparation} \\ \vspace{3em} L'exemple de Proxima Centauri b \vspace{4em} \\ \large{Stage encadré par : Alexis Carlotti, Lucie Leboulleux}}
+
+% \makeatletter         
+% \def\@maketitle{
+% \raggedright
+% \includegraphics[width = 30mm]{figures/logo_ipag.jpg}\\[2ex]
+% \begin{center}
+% {\huge  \@title }\\[4ex] 
+% {\Large  \@author}\\[4ex] 
+% \@date\\[8ex]
+% \end{center}}
+% \makeatother
+
+\rhead{\large Rapport de stage — L2 Physique Recherche}
+\lhead{\large IPAG - Laly Boyer - Mai/Juillet 2024}  
+
+
+\setlength{\headheight}{14.0pt} % Increase headheight to 14.0pt
+
+\begin{document}
+\maketitle
+\vspace{5em}
+\begin{center}
+    \begin{minipage}{0.4\textwidth}
+        \centering
+        \includegraphics[width = 25mm]{figures/logo_ipag.jpg}
+    \end{minipage}
+    \begin{minipage}{0.4\textwidth}
+        \centering    
+        \includegraphics[width = 25mm]{figures/logo_uga.jpg}
+    \end{minipage}
+\end{center}
+\thispagestyle{fancy}
+\clearpage
+
+\input{base/commandes.tex}
+%\input{content/00_Title.tex}
+\input{content/00_Abstract.tex}
+%\input{content/01_Introduction.tex}
+\input{content/02_Apodisation.tex}
+\input{content/03_PSF.tex}
+\input{content/04_OA.tex}
+\input{content/05_SNR.tex}
+\input{content/06_Comparaison.tex}
+
+\bibliographystyle{plain} % We choose the "plain" reference style
+\bibliography{content/database.bib} % Entries are in the refs.bib file
+
+\end{document}
