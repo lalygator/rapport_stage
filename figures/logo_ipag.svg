@@ -1,0 +1,20 @@
+<svg width="3640" height="3749" viewBox="0 0 3640 3749" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2350 804.5C2350 1022.58 2320.5 978 1958.5 1179C1842.49 1243.42 1689 1457.96 1696.5 1458C1335.58 1458 1043 1165.42 1043 804.5C1043 443.582 1335.58 151 1696.5 151C2057.42 151 2350 443.582 2350 804.5Z" fill="#3A7BC8"/>
+<circle cx="534.5" cy="931.5" r="213.5" fill="#3A7BC8"/>
+<circle cx="294" cy="2063" r="131" fill="#3A7BC8"/>
+<circle cx="2830.5" cy="169.5" r="169.5" fill="#3A7BC8"/>
+<circle cx="87.5" cy="248.5" r="87.5" fill="#3A7BC8"/>
+<path d="M3599.5 2129.5C3599.5 2075.02 3513 1956 3341.5 1956C3237.5 1956 3069.32 2024.88 3072.5 2264C3075.46 2487.31 3240 2564 3343 2564C3490 2557 3610 2470 3610 2363" stroke="black" stroke-width="60"/>
+<rect width="60" height="273" transform="matrix(0 -1 -1 0 3627 2312)" fill="black"/>
+<rect width="60" height="329" transform="matrix(1 0 0 -1 3577 2581)" fill="black"/>
+<rect width="61.2161" height="673.012" transform="matrix(0.920935 0.389717 -0.359896 0.932993 2687 1934.38)" fill="black"/>
+<rect width="63.779" height="671.866" transform="matrix(-0.920935 0.389717 0.359896 0.932993 2764.29 1934.29)" fill="black"/>
+<rect width="54" height="327.479" transform="matrix(0 -1 -1 0 2885.64 2371)" fill="black"/>
+<path d="M2500.88 2586V2562H2444.55L2435 2586H2500.88Z" fill="black"/>
+<path d="M3016.92 2586L3006.12 2561H2947.7V2586H3016.92Z" fill="black"/>
+<rect width="25" height="77.3346" transform="matrix(0 -1 -1 0 2764.39 1959)" fill="black"/>
+<path d="M2310 1958C2288.79 1958 2051 1958 2051 1958V2282H2310C2367.38 2282 2461.08 2200.58 2462.5 2126C2464.05 2044.63 2400.88 1958 2310 1958Z" stroke="black" stroke-width="55"/>
+<rect x="2022" y="1933" width="63" height="651" fill="black"/>
+<rect x="1819" y="1933" width="67" height="651" fill="black"/>
+<path d="M1480.5 1463C750.5 2109.5 419.5 3102.5 419.5 3748.5C419.5 3748.5 537 2445.5 1585.5 1552.5C2634 659.5 3598 659.5 3598 659.5C3167 628 2256.79 775.509 1480.5 1463Z" fill="black" stroke="black" stroke-width="4"/>
+</svg>
