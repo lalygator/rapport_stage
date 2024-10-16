@@ -1,17 +1,20 @@
-\section{L'apodisation}
+\section{\centering L'apodisation}
 
 Le but de l'apodisation est de "lisser" un signal assez brut afin d'enlever ou adoucir les discontinuités sur ses bords. 
 Cela va permetttre d'augmenter le contraste et de supprimer, du moins en partie, les anneaux de diffraction produits par un instrument d'optique, afin d'améliorer la définition des éléments à étudier.
 
 \subsection{Bases sur la diffraction — Transformée de Fourier}
 
-- La conversion pour comprendre comment on passe du plan pupille au plan focal
-- graphe largeur commune et tout, avec condition que la planete soit visible a tout les longueur d’onde et que la largeur commune soit plus grand que le coeur de la PSF a la longueur d’onde max
+\begin{itemize}
+\item La conversion pour comprendre comment on passe du plan pupille au plan focal
+    
+    \item graphe largeur commune et tout, avec condition que la planete soit visible a tout les longueur d’onde et que la largeur commune soit plus grand que le coeur de la PSF a la longueur d’onde max 
+\end{itemize}
 
-Prenons l'exemple classique du signal d'une étoile, que l'on considèrera comme une source ponctuelle à l'infini, passant à travers l'ouverture circulaire d'un téléscope. 
+La diffraction est un phénomène qui se produit lorsqu'une onde rencontre un obstacle ou une ouverture. Prenons l'exemple classique du signal d'une étoile, que l'on considèrera comme une source ponctuelle à l'infini, passant à travers l'ouverture circulaire d'un téléscope. 
 
 On part d'une onde plane à l'infini qui passe à travers une ouverture circulaire. Lorsque l'onde atteint ce plan, elle devient alors une fonction circulaire $\text{circ}_r(\rho')$.
-En passant par cette ouverture, la fonction circulaire devient par transformée de Fourier (c.f. \emph{Diffraction de Fraunhofer à l'infini}) la fonction de Bessel d'ordre 1 $J_1$ (Fig. 1.a), qu'on appelle aussi fonction "sombrero".
+En passant par cette ouverture, la fonction circulaire devient par transformée de Fourier (c.f. \emph{Diffraction de Fraunhofer à l'infini}) la fonction de Bessel d'ordre 1 $J_1$ (Fig. 1.a), qu'on appelle aussi fonction "sombrero" (fig 3.a).
 
 \begin{figure}[htbp]
     \centering
@@ -19,7 +22,7 @@ En passant par cette ouverture, la fonction circulaire devient par transformée 
     \caption{Diffraction d'une onde plane par une ouverture circulaire.}
 \end{figure}
 
-Ce qu'on voit sur nos écrans lors des mesures est la \textbf{tâche d'Airy} (Fig 1.b), qui correspond à la fonction sombrero vue du dessus.
+Ce qu'on voit sur nos écrans expérimentalement est la \textbf{tâche d'Airy} (Fig 2.b), qui correspond à la fonction sombrero vue du dessus.
 
 \begin{figure}[htbp]
     \centering
@@ -43,8 +46,7 @@ infinie et limite la taille de l’onde. Cela entraine que l’image d’un poin
 va être une tâche proportionnelle au rayon de la tâche d’Airy, ce rayon étant proportionnel à $\lambda$. %c’est ce qui explique que l’on peut mieux focaliser un laser bleu qu’un laser rouge
 %et donc que le blue ray peut contenir plus d’information qu’un CD lu par un laser rouge.
 
-Globallement, le centre de cette tâche (soit l'information compris dans le rayon $< 1.22\: \nicefrac{\lambda}{D}$) correspond à ce qu'on appelera le \textbf{coeur de la PSF} : l'essentiel de l'information qu'on peut récupérer à partir de la lumière de l'étoile se trouve dedans.
-
+Globalement, le centre de cette tâche (soit l'information compris dans le rayon $< 1.22\: \nicefrac{\lambda}{D}$) correspond à ce qu'on appelera le \textbf{coeur de la PSF} : l'essentiel de l'information que l'on peut récupérer de la lumière de l'étoile se trouve dedans.
 
 
 Ainsi, nous nous retrouvons à comprendre la nécessité de l'apodisation : la lumière diffracté de l'étoile va venir complétement recouvrir la lumière de l'exoplanète, rendant impossible l'analyse \iffalse ou genre récupérer l'information? \fi de la lumière de cette dernière. 
