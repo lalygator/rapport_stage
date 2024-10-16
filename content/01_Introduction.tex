@@ -1,8 +1,29 @@
-\section{Introduction - Proxima b}
+%\section{Introduction}
 
-\subsection{Contexte}
+\section{Contexte - Proxima b et la recherche de vie}
 
-Bien que les masques d'apodisations actuels permettent d'observer des contrastes de l'ordre de $10^{-10}$ pour des planètes assez éloignées et $10^{-5}$ pour des planètes proches, ils sont limités par le flou d'\textsl{optique adaptative}. Ce flou vient créer un flou et limite le contraste maximal atteignable par l'ELT-HARMONI, instrument sur lequel nous baserons nos recherches et simulations.
+\begin{wrapfigure}{r}{0.45\textwidth}
+    \includegraphics[width=0.45\textwidth]{figures/art_proxb.jpg}
+    \caption{Vue d'artiste de Proxima Centauri b, l'exoplanète la plus du système solaire.}
+\end{wrapfigure}
+
+La recherche de planètes habitables a été identifié comme une des priorité majeurs dans le secteur de l'astrophysique selon le \textsl{Pathways to Discovery in Astronomy and Astrophyics for the 2020s}[Source]. En effet, la découverte de vie dans notre univers serait une avancée majeure pour l'humanité, et permettrait de répondre à des questions fondamentales sur notre place dans l'univers. 
+
+Parmi les plus de 5000 exoplanètes découvertes à ce jour, Proxima b, une exoplanète de type tellurique découverte en 2016 située dans la zone habitable de son étoile hôte, Proxima Centauri. Non seulement l'étude de cette exoplanète pourrait nous permettre de mieux comprendre les processus de formation et d'évolution des planètes telluriques, mais la caractérisation de son atmosphère pourrait également nous permettre de détecter des signes de vie. La possibilité de vie aussi proche de nous serait une découverte particulièrement marquante et symbolique pour l'humanité.
+
+Cette exoplanète est donc une cible privilégiée pour la recherche de signes de vie. Cependant, l'observation directe de cette exoplanète est rendue difficile par la faible séparation angulaire entre l'étoile et l'exoplanète. Il est donc nécessaire de développer des techniques d'observation adaptées pour pouvoir caractériser cette exoplanète.
+
+Pour résoudre ce problème, l'ELT-HARMONI, un spectrographe de première lumière observant dans le visible et l'infrarouge (de 0.47 à 2.45 µm) prévu pour le télescope géant européen ELT, est équipé d'un Module Haut Contraste (HCM) développé à l'IPAG. Ce module permettra l'imagerie directe d'exoplanètes jusqu'à $10^{-6}$ fois plus faible que leur étoile hôte, et d'une séparation angulaire de 100 mas. Pour des raisons techniques (lesquels ?), l'observation est limité dans la bande H, soit entre 1.4 et 1.8 µm.
+
+
+Bien que les masques d'apodisations actuels permettent d'observer des contrastes de l'ordre de $10^{-10}$ pour des planètes assez éloignées et $10^{-5}$ pour des planètes proches, ils sont limités par le flou d'\textsl{optique adaptative}. Ce flou, provoqué par le mouvement des miroirs venant corriger les variaitons de l'atmosphere sur la lumière, limite le contraste maximal atteignable par l'ELT-HARMONI.
+
+À l’aide de simulation réalisé dans l’approximation d’un flou d’optique adaptative uniforme dans notre champ de vue (1.), et d’une simulation plus réaliste avec de réels donnée de simulation d’OA (2.), nous calculerons le gain en SNR des images de contrastes générés (PSF) pour une série d’apodiseur adéquat à l’observation de Proxima b.
+
+Pour ces deux situations, nous déterminerons le meilleur apodiseur, défini par le plus grand gain en SNR atteignable. En effet, plus grand est le gain en SNR, plus grand est le gain de temps de télescope, proportionnel au carré du gain en SNR.
+
+%Conclusion 
+% On pourra donc gagner un certain temps de téléscope mais on est en définitive limité par un flou d’OA. Si on pouvait réduire le flou jusqu’à $10^(??)$, alors on pourrait espérer pouvoir augmenter le gain de SNR jusqu’à ???
 
 
 % En effet, ces planète étant généralement très proche de leurs étoiles (car leurs zone habitable sont de l’ordre de $$a=1\text{ UA}$$ comme la Terre en gros), et donc distinguer la lumière de la planète qui est 10^7 fois plus faible que celle de son étoile est un vrai challenge, au vu des distances angulaire à surmonter.
@@ -34,7 +55,7 @@ Bien que les masques d'apodisations actuels permettent d'observer des contrastes
 % %Conclusion 
 % On pourra donc gagner un certain temps de téléscope mais on est en définitive limité par un flou d’OA. Si on pouvait réduire le flou jusqu’à $10^(??)$, alors on pourrait espérer pouvoir augmenter le gain de SNR jusqu’à ???
 
-\subsection{Proxima et Proxima b, caractéristiques et intérêts d'observation}
+% \subsection{Proxima et Proxima b, caractéristiques et intérêts d'observation}
 % Résumé de l'article
 % \begin{abstract}
 % Ceci est le résumé de mon article.
