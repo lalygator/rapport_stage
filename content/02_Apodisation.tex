@@ -1,33 +1,38 @@
 \section{\centering L'apodisation}
 
-Le but de l'apodisation est de "lisser" un signal assez brut afin d'enlever ou adoucir les discontinuités sur ses bords. 
-Cela va permetttre d'augmenter le contraste et de supprimer, du moins en partie, les anneaux de diffraction produits par un instrument d'optique, afin d'améliorer la définition des éléments à étudier, pour ce cas-ci la lumière de Proxima b.
+\paragraph{Définition} Le but de l'\textbf{apodisation} est de "lisser" un signal assez brut afin d'enlever ou adoucir les discontinuités sur ses bords. 
+Cela va permetttre d'augmenter le contraste et de supprimer en partie les anneaux de diffraction produits par un instrument d'optique, afin d'améliorer la définition des éléments à étudier, pour ce cas-ci la lumière de Proxima b.
 
 \subsection{Bases sur la diffraction — Transformée de Fourier}
 
-\begin{itemize}
-\item La conversion pour comprendre comment on passe du plan pupille au plan focal
+% \begin{itemize}
+% \item La conversion pour comprendre comment on passe du plan pupille au plan focal
     
-    \item graphe largeur commune et tout, avec condition que la planete soit visible a tout les longueur d’onde et que la largeur commune soit plus grand que le coeur de la PSF a la longueur d’onde max 
-\end{itemize}
+%     \item graphe largeur commune et tout, avec condition que la planete soit visible a tout les longueur d’onde et que la largeur commune soit plus grand que le coeur de la PSF a la longueur d’onde max 
+% \end{itemize}
 
-La diffraction est un phénomène qui se produit lorsqu'une onde rencontre un obstacle ou une ouverture. Prenons l'exemple classique du signal d'une étoile, que l'on considèrera comme une source ponctuelle à l'infini, passant à travers l'ouverture circulaire d'un téléscope. 
 
-On part d'une onde plane à l'infini qui passe à travers une ouverture circulaire. Lorsque l'onde atteint ce plan, elle devient alors une fonction circulaire $\text{circ}_r(\rho')$.
-En passant par cette ouverture, la fonction circulaire devient par transformée de Fourier (c.f. \emph{Diffraction de Fraunhofer à l'infini}) la fonction de Bessel d'ordre 1 $J_1$ (Fig. 1.a), qu'on appelle aussi fonction "sombrero" (fig 3.a).
+La \textbf{diffraction} est un phénomène qui se produit lorsqu'une onde rencontre un obstacle ou une ouverture. 
 
-\begin{wrapfigure}[11]{r}{0.45\textwidth}
+Prenons l'exemple classique du signal d'une étoile, que l'on considèrera comme une source ponctuelle à l'infini, passant à travers l'ouverture circulaire d'un téléscope. 
+
+\begin{wrapfigure}[14]{r}{0.45\textwidth}
     \centering
     \includegraphics[width=0.4\textwidth]{/Users/lalyboyer/Desktop/sombrr.png}
     \caption{Fonction de Bessel d'ordre 1 $J_1$, aussi appelé "fonction sombrero".}
+    \label{fig:sombrero}
 \end{wrapfigure}
 
-Ce qu'on voit sur nos écrans expérimentalement est une \textbf{tâche d'Airy} (Fig 2.b), correspondant à la fonction sombrero vue du dessus.
+On part d'une onde plane à l'infini qui passe à travers une ouverture circulaire. Lorsque l'onde traverse ce plan, elle devient alors une fonction circulaire $\text{circ}_r(\rho')$. On peut voir ce dispositif sur le schéma \ref{fig:diff_expl}.
+En passant par cette ouverture, la fonction circulaire devient par transformée de Fourier la fonction de Bessel d'ordre 1 $J_1$ \ref{fig:sombrero}.
+
+Ce que l'on voit expérimentalement est une \textbf{tâche d'Airy}, correspondant à la fonction sombrero vue du dessus.
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.75\textwidth]{figures/diff_expl.png}
     \caption{Diffraction d'une onde plane par une ouverture circulaire.}
+    \label{fig:diff_expl}
 \end{figure}
 
 %\hspace*{3cm}
@@ -42,13 +47,12 @@ Ce qu'on voit sur nos écrans expérimentalement est une \textbf{tâche d'Airy} 
 
 Cette tâche d’Airy entraine toute une série d’implications pour l’imagerie, car une lentille n’est pas
 infinie et limite la taille de l’onde. Cela entraine que l’image d’un point ne peut pas être un point mais
-va être une tâche proportionnelle au rayon de la tâche d’Airy, ce rayon étant proportionnel à $\lambda$. %c’est ce qui explique que l’on peut mieux focaliser un laser bleu qu’un laser rouge
+va être une tâche proportionnelle au rayon de la tâche d’Airy, dont le rayon est proportionnel à $\lambda$. %c’est ce qui explique que l’on peut mieux focaliser un laser bleu qu’un laser rouge
 %et donc que le blue ray peut contenir plus d’information qu’un CD lu par un laser rouge.
 
-Globalement, le centre de cette tâche (soit l'information compris dans le rayon $< 1.22\: \nicefrac{\lambda}{D}$) correspond à ce qu'on appelera le \textbf{coeur de la PSF} : l'essentiel de l'information que l'on peut récupérer de la lumière de l'étoile se trouve dedans.
+Globalement, la tâche principale centrale (soit la lumière comprise dans le rayon $< 1.22\: \nicefrac{\lambda}{D}$) correspond à ce qu'on appelera le \textbf{coeur de la PSF} : l'essentiel de l'information que l'on peut récupérer de l'étoile se trouve dedans.
 
-
-Ainsi, nous nous retrouvons à comprendre la nécessité de l'apodisation : la lumière diffracté de l'étoile va venir complétement recouvrir la lumière de l'exoplanète, rendant impossible l'analyse \iffalse ou genre récupérer l'information? \fi de la lumière de cette dernière. 
+Ainsi, nous comprenons la nécessité de l'apodisation : la lumière diffracté de l'étoile va venir complétement recouvrir la lumière de l'exoplanète, rendant impossible l'analyse \iffalse ou genre récupérer l'information? \fi de la lumière de cette dernière. 
 
 %Image montrant l'exemple
 
@@ -69,15 +73,15 @@ Ainsi, nous nous retrouvons à comprendre la nécessité de l'apodisation : la l
 \end{figure}
 
 
-Afin de pouvoir créer une zone de haut contraste permettant l'observation d'une exoplanète proche de son étoile, différentes méthodes sont possibles : nous choisirons ici l’apodisation à l’aide d’un \textbf{masque pupille}; nous allons commencer par définir ce dont il s'agit.
+Afin de pouvoir créer une zone de haut contraste permettant l'observation d'une exoplanète proche de son étoile, différentes méthodes sont possibles : nous choisirons ici l’apodisation à l’aide d’un \textbf{masque pupille}. Nous commencerons par définir ce dont il s'agit.
 
 \subsection{Masque pupille — Apodiseur}
 
-Un masque pupille (aussi appelé \emph{apodiseur}) est un carré en verre recouvert de chromium que l'on place dans le téléscope permettant de diffracter la lumière entrante dans le télescope de tel manière à pouvoir créer une zone où le contraste est suffisamment faible pour pouvoir observer des objets à luminosité très faibles autour d'objet très lumineux.
+Un \textbf{masque pupille} (aussi appelé \textbf{apodiseur}) est un carré en verre recouvert de chromium que l'on place dans le téléscope permettant de diffracter la lumière entrante dans le télescope de tel manière à pouvoir créer une zone où le contraste est suffisamment faible pour pouvoir observer des objets à luminosité très faibles autour d'objet très lumineux.
 
 Ces masques permettent de diffracter la lumière autour de l’étoile afin de pouvoir créer une zone de haut contraste dans une zone souhaitée.
 
-Illustration of the apodization technique in the focalplane. Top left: unapodized amplitude split into two shiftedamplitude (bottom left). The result of this coherent additionis the ﬁrst-apodized amplitude (top center). This approachcan be iteratively reproduced: the split and shifted amplitudes(bottom center) and second-apodized amplitude (top right).
+%Illustration of the apodization technique in the focalplane. Top left: unapodized amplitude split into two shiftedamplitude (bottom left). The result of this coherent additionis the ﬁrst-apodized amplitude (top center). This approachcan be iteratively reproduced: the split and shifted amplitudes(bottom center) and second-apodized amplitude (top right).
 
 \begin{figure}[htbp]
     \centering
@@ -85,14 +89,16 @@ Illustration of the apodization technique in the focalplane. Top left: unapodize
     \caption{Illustration de la technique d'apodisation dans le plan focal. En haut à gauche : amplitude non apodisée divisée en deux amplitudes décalées (en bas à gauche). Le résultat de cette addition cohérente est l'amplitude apodisée (en haut au centre). Cette approche peut être reproduite de manière itérative : les amplitudes divisées et décalées (en bas au centre) et l'amplitude apodisée (en haut à droite). }%\cite{apodExpl}}
 \end{figure}
 
-On peut ainsi remarquer qu'au fur et a mesure qu'on itère cette méthode, on crée une zone de haut contraste de plus en plus grande, permettant de récupérer de plus en plus d'information de l'exoplanète.
-
-\begin{wrapfigure}[6]{l}{0.35\textwidth}
+\begin{wrapfigure}[9]{l}{0.35\textwidth}
     \centering
     \includegraphics[width=0.30\textwidth]{figures/apod_harmoni.png}
     \caption{Apodiseur HC1 de l'instrument HARMONI.}%\cite{apod_harmoni}}
     %\label{fig:apod_harmoni}
 \end{wrapfigure}
+
+On peut ainsi remarquer qu'au fur et a mesure qu'on itère cette méthode, on crée une zone de haut contraste de plus en plus grande, permettant de récupérer de plus en plus d'information de l'exoplanète.
+
+
 
 %Image montrant le principe physique de l'apodisation
 Cependant, ce processus implique forcément une perte d'information, car la lumière de l'étoile est aussi diffractée. C'est pourquoi il est important de trouver un compromis entre la taille de la zone de haut contraste et la perte d'information.
